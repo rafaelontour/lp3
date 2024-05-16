@@ -64,6 +64,7 @@
             margin-bottom: 10px;
             transform: rotate(-90deg);
             transition: all 1s ease;
+            top: -43px;
         }
 
         form {
@@ -121,6 +122,31 @@
             transform: rotate(0);
         }
 
+        /* ############################################# */
+
+
+        div#form_sobre > div#esquerda > .fotos > img {
+            border-radius: 100%;
+            width: 80px;
+            height: 80px;
+        
+           
+            
+        }
+
+        div.fotos {
+            width: 600px;
+            height: 100px;
+            
+            display: flex;
+            position: relative;
+            z-index: 2;
+            top: 32%;
+            right: 150px;
+            justify-content: space-around;
+        
+        }
+
 
     </style>
 </head>
@@ -135,8 +161,16 @@
         <div id="esquerda" onmousemove="animar()" onmouseleave="voltar()">
             <p id="teste">
                 test.
+
+                <div class="fotos">
+                    <img src="ninha.jpg" alt="">
+                    <img style="margin-top: 10px;" src="rafa.jpg" alt="">
+                    <img src="carlos.jpg" alt="">
+                </div>
+                
             </p>
-            <p id="div_esquerda">Conheça a LP3 Trocas & Livros...</p>
+
+            <p>Conheça a LP3 Trocas & Livros</p>
         </div>
 
         <form action="" id="form">
