@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url("livros.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            background-color: rgb(255, 78, 78);
+            width: 100%;
+            height: 70px;
+        }
+
+        header > img {
+            width: 60px;
+            margin-left: 30px;
+            margin-right: 50px;
+        }
+
+        /* ################################################ */
+
+        #form_sobre {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #esquerda {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            width: 50px;
+            height: 500px;
+            margin-top: 30px;
+            background-color: rgba(154, 148, 148, 0.899);
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            transition: all 1s ease;
+        }
+
+        #esquerda > p {
+            position: relative;
+            right: -124px;
+            width: 300px;
+            text-align: center;
+            margin-bottom: 10px;
+            transform: rotate(-90deg);
+            transition: all 1s ease;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 500px;
+            height: 470px;
+            margin-top: 40px;
+            background-color: rgba(255, 255, 255, 0.903);
+            border-radius: 10px;
+            transition: all 1s ease;
+        }
+
+        form > p {
+            margin: 5px;
+            font-size: 18px;
+        }
+
+        input {
+            margin: 5px 0 0 0;
+            padding: 10px;
+            width: 300px;
+            border-radius: 20px;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.319);
+        }
+
+        p#termos {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        input[type="submit"] {
+            box-shadow: 0 5px 2px black;
+        }
+
+        input[type="submit"]:active {
+            color: black;
+            box-shadow: 0 0px 3px black;
+            transform: translateY(5px);
+        }
+
+        p#teste {
+            display: none;
+            left: 150px;
+            opacity: 0;
+            color: black;
+            width: 500px;
+            position: absolute;
+            z-index: 2;
+            top: 30%;
+            transition: all 0.2s ease;
+            transform: rotate(0);
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.svg" alt="">
+        <h3 style="font-size: 30px; letter-spacing: 5px;">Cadastro</h3>
+    
+    </header>
+
+    <div id="form_sobre">
+        <div id="esquerda" onmousemove="animar()" onmouseleave="voltar()">
+            <p id="teste">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non laudantium quos eos dolores quo inventore nostrum voluptatem saepe, deserunt ex earum, voluptate quae aliquam blanditiis dignissimos soluta architecto! Voluptates, corporis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, eius itaque modi iusto excepturi exercitationem dolor sapiente ab optio beatae reprehenderit cum fugiat facere commodi quam, magni illum! Reiciendis, fugit.
+            </p>
+            <p id="div_esquerda">Conheça a LP3 Trocas & Livros</p>
+        </div>
+
+        <form action="" id="form">
+            <h3 style="margin: 30px 0 25px 0; font-size: 40px;">Seus dados</h3>
+
+            <p>
+                <label for="inome">Nome:</label><br>
+                <input type="text" name="nnome" id="inome">
+                
+            </p>
+            <p>
+                <label for="iemail">Email:</label><br>
+                <input type="email" name="nemail" id="iemail">
+            </p>
+
+            <p>
+                <label for="isenha">Senha:</label><br>
+                <input type="password" name="nsenha" id="isenha">
+            </p>
+
+            <p id="termos" style="margin-top: 15px;">
+                <input type="checkbox" style="width: 15px; margin: 0 5px 0 0" checked readonly>
+                <span style="font-size: 10px;">Concordo com os <a href="" style="text-decoration: none; color: blue;">Termos e Condições</a> da LP3 Livros & Trocas</span>
+            </p>
+
+            <input type="submit" style="color: white; background-color: green; cursor: pointer; margin-top: 20px;" value="Cadastrar">
+        </form>
+    </div>
+
+    <script>
+
+        var div_esquerda = document.getElementById("esquerda");
+        var pteste = document.getElementById("teste")
+        div_esquerda.addEventListener("transitionend", () => {
+            pteste.style.display = "block";
+            
+            if (div_esquerda.style.width == "850px") {
+                setTimeout(() => {
+                    pteste.style.opacity = "1";
+                }, 100);
+            }
+
+            if (div_esquerda.style.width == "50px") {
+                pteste.style.display = "none";
+            }
+        });
+
+        function animar() {
+
+            var div = document.getElementById("esquerda");
+            var form = document.getElementById("form");
+            var p = document.getElementById("div_esquerda");
+
+            div.style.width = "850px";
+            form.style.transform = "translateX(425px)";
+
+            p.style.opacity = "0";
+        }
+
+        function voltar() {
+            var div = document.getElementById("esquerda");
+            var form = document.getElementById("form");
+            var p = document.getElementById("div_esquerda");
+
+            div.style.width = "50px";
+            form.style.transform = "translateX(0px)";
+
+            p.style.opacity = "1";
+
+            pteste.style.opacity = "0";
+        }
+        
+    </script>
+</body>
+</html>
