@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("../imagens/livros.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 78, 78);
+    width: 100%;
+    height: 70px;
+}
+
+header > img {
+    width: 60px;
+    margin-left: 30px;
+    margin-right: 50px;
+}
+
+/* ################################################ */
+
+#form_sobre {
+    display: flex;
+    justify-content: space-around;
+}
+
+#esquerda {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 500px;
+    margin-top: 30px;
+    background-color: rgba(154, 148, 148, 0.899);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: all 1s ease;
+}
+
+#esquerda > p {
+    position: relative;
+    right: -124px;
+    width: 300px;
+    text-align: center;
+    margin-bottom: 10px;
+    transform: rotate(-90deg);
+    transition: all 1s ease;
+    top: -43px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 470px;
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.903);
+    border-radius: 10px;
+    transition: all 1s ease;
+}
+
+form > p {
+    margin: 5px;
+    font-size: 18px;
+}
+
+input {
+    margin: 5px 0 0 0;
+    padding: 10px;
+    width: 300px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.319);
+}
+
+p#termos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input[type="submit"] {
+    box-shadow: 0 5px 2px black;
+}
+
+input[type="submit"]:active {
+    color: black;
+    box-shadow: 0 0px 3px black;
+    transform: translateY(5px);
+}
+
+p#teste {
+    display: none;
+    left: 150px;
+    opacity: 0;
+    color: black;
+    width: 500px;
+    position: absolute;
+    z-index: 2;
+    top: 30%;
+    transition: all 0.2s ease;
+    transform: rotate(0);
+}
+
+/* ############################################# */
+
+
+div#form_sobre > div#esquerda > .fotos > img {
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    animation: tremer 200ms
+        linear infinite alternate;
+    transition: all 0.2s ease;
+    
+}
+
+div#form_sobre > div#esquerda > .fotos > img:hover {
+    animation-play-state: paused;
+    transform: scale(110%);
+}
+
+div.fotos {
+    width: 600px;
+    height: 100px;
+    display: flex;
+    position: relative;
+    z-index: 2;
+    top: 32%;
+    right: 150px;
+    justify-content: space-around;
+
+}
+
+@keyframes tremer {
+    to { translate: 0 7px; }
+}

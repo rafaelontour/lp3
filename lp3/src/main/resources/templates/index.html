@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LP3 Trocas & Livros</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header>
+        <img th:src="@{imagens/logo.svg}" alt="">
+        <h3 style="font-size: 30px; letter-spacing: 5px;">Cadastro</h3>
+    </header>
+
+    <div id="form_sobre">
+        <div id="esquerda" onmousemove="animar()" onmouseleave="voltar()">
+            <p id="teste">
+                test.
+
+                <div class="fotos">
+                    <img th:src="@{imagens/ninha.jpg}" alt="Componente da equipe: Alana">
+                    <img style="margin-top: 10px;" th:src="@{imagens/rafa.jpg}" alt="Componente da equipe: Rafael">
+                    <img th:src="@{imagens/carlos.jpg}" alt="Componente da equipe: Carlos">
+                </div>
+                
+            </p>
+
+            <p id="div_esquerda">Conheça a LP3 Trocas & Livros</p>
+        </div>
+
+        <form action="" id="form">
+            <h3 style="margin: 30px 0 25px 0; font-size: 40px;">Seus dados</h3>
+
+            <p>
+                <label for="inome">Nome:</label><br>
+                <input type="text" name="nnome" id="inome">
+                
+            </p>
+            <p>
+                <label for="iemail">Email:</label><br>
+                <input type="email" name="nemail" id="iemail">
+            </p>
+
+            <p>
+                <label for="isenha">Senha:</label><br>
+                <input type="password" name="nsenha" id="isenha">
+            </p>
+
+
+            <p id="termos" style="margin-top: 15px;">
+                <input type="checkbox" style="width: 15px; margin: 0 5px 0 0">
+                <span style="font-size: 10px;">Concordo com os <a href="" style="text-decoration: none; color: blue;">Termos e Condições</a> da LP3 Livros & Trocas</span>
+            </p>
+
+            <input type="submit" style="color: white; background-color: green; cursor: pointer; margin-top: 20px;" value="Cadastrar">
+        </form>
+    </div>
+
+    <script th:src="@{/js/script.js}"></script>
+</body>
+</html>
